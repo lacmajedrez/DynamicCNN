@@ -1,0 +1,26 @@
+% prepare the segmentation problem
+clear 
+close all
+
+vec = @(x) x(:);
+
+I = imread('coloredChips.png');
+I = I(1:300,101:450,:);
+subplot(2,2,1)
+imagesc(I);
+axis off;
+
+subplot(2,2,2)
+imagesc(imgSeg);
+axis off;
+
+
+disp('The image we want to segment');
+
+pause
+
+RGB = [vec(I(:,:,1)), vec(I(:,:,2)), vec(I(:,:,3))];
+
+i1 = imgSeg
+plot3(RGB(:,1),RGB(:,2),RGB(:,3),'.')
+
